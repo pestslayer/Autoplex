@@ -1,28 +1,30 @@
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { Routes, Route, Link, BrowserRouter,} from 'react-router-dom'
 import routes from './config/routes'
-import Navbar from "./components/Navbar";
-
+import Navbar from './components/Navbar'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 function App() {
 
-
   return (
     <BrowserRouter>
-      <div><Navbar/></div>
-      <Routes>
-        { routes.map((route: any, index: any) => (
-          <Route
-          key={index}
-          path={route.path}
-          element={
-            <route.component />
-
-          }
-          />
-        )) }
-      </Routes>
+      <Navbar />
+      <Provider store={store}>
+        <Routes>
+          { routes.map((route: any, index: any) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <route.component />
+              }
+              />
+          )) }
+        </Routes>
+      </Provider>
     </BrowserRouter>
   )
 }
+
 
 export default App
