@@ -1,34 +1,32 @@
-import React from 'react'
+
 import Dashboard from '../pages/Dashboard'
 import Home from '../pages/Home'
-import Carousel from '../components/Carousel'
-import signin from '../pages/signin'
+
+
 
 
 interface RouteType {
     path: string,
     component: () => JSX.Element,
     name: string
+    protected: boolean
 }
 
 const routes: RouteType[] = [
     {
         path: "",
         component: Home,
-        name: "Home Screen"
+        name: "Home Screen",
+        protected: false,
     },
 
     {
         path: "/dashboard",
         component: Dashboard,
-        name: "Dashboard"
+        name: "Dashboard",
+        protected: true,
     },
 
-    {
-        path: "/signin",
-        component: signin,
-        name: "SignIn"
-    }
 ];
 
 export default routes

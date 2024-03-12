@@ -1,5 +1,6 @@
-import React from 'react'
+
 import InventoryForm from './InventoryForm';
+import './../index.css'
 
 type Props = {
     id?: string[]
@@ -12,8 +13,7 @@ const Modal = ( props: Props ) => {
   return (
     <div 
             onClick={ props.onClose } 
-            className='fixed w-full h-full flex overflow-auto z-1 
-            justify-center align-middle'
+            className='modal'
         
         >
             <div
@@ -22,14 +22,14 @@ const Modal = ( props: Props ) => {
                     e.stopPropagation()
                 }}
             >
-                <div className="w-full flex flex-col">
+                <div className="modal">
                     <div className="flex flex-row space-apart">
                         <p className="flex justify-start m-3 p-2 rounded hover:bg-slate-800 text-white"
                         onClick={props.onClose} >
                             Close
                         </p>
                     </div>
-                    <div className="flex flex-col items-center text-center mt-3 p-2">
+                    <div className="modal-content2">
                         <InventoryForm id={props.id} />
                     </div>
                 </div>

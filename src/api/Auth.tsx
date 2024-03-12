@@ -2,7 +2,7 @@ import { retry } from "@reduxjs/toolkit/query"
 
 const Auth = () => {
     LogIn: async () => {
-    const response = await fetch(`http://127.0.0.1:5000/signin`)
+    const response = await fetch(`http://127.0.0.1:5000`)
     return await response.json()
 }
 
@@ -12,7 +12,7 @@ return (
         
         <input type="text" placeholder="User Name" />
         <input type="text" placeholder="Password" />
-        <button type="submit"></button>
+        <button onClick={Auth} type="submit">Submit</button>
     
     
     </div>

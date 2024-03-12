@@ -1,8 +1,3 @@
-import React from 'react'
-import imp from './../public/ipm.png'
-import car_2 from './../public/car_2.png'
-import car_3 from './../public/car_3.jpg'
-
 
 const Carousel = () => {
   return (
@@ -14,21 +9,21 @@ const Carousel = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="./../public/ipm.png" className="d-block w-100" alt="..."/>
+      <img src="/ipm.png" className="d-block w-100" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
         <h5>Looking for a New Whip?</h5>
         <p>Come on down to get into a new ride today!!!!</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src="./../public/car_2.png" className="d-block w-100" alt="..."/>
+      <img src="/car_2.png" className="d-block w-100" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
         <h5>Like Low-Riders?</h5>
         <p>Come and Drive Home in a Used Cadillac on hydraulics.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src="./../public/car_3.jpg" className="d-block w-100" alt="..."/>
+      <img src="/car_3.jpg" className="d-block w-100" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
         <h5>Like Trucks?</h5>
         <p>From show room trucks to work trucks we have you covered!!</p>

@@ -1,21 +1,80 @@
+const token = '49a6642adf639242b33046b1c0fe07b6c9ad27bd7bee23f3'
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { ReCaptchaEnterpriseProvider, initializeAppCheck } from "firebase/app-check";
+export const server_calls = {
+  get: async () => {
+    const response = await fetch(`https://jonjonautoplex.onrender.com/api/inventory`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Access-Control_Allow-Origin': '*',
+        'x-access-token': `${token}`
+      }
+    });
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCu-_jxRJgOYaU7ts3BG4hTXLtL4WwKM5E",
-  authDomain: "autoplex-d9f3d.firebaseapp.com",
-  projectId: "autoplex-d9f3d",
-  storageBucket: "autoplex-d9f3d.appspot.com",
-  messagingSenderId: "891335982011",
-  appId: "1:891335982011:web:a4c89ff22cf1102573229e",
-  measurementId: "G-PTN3XETBR8"
-};
+    if (!response.ok){
+      throw new Error('Failed to fetch data from the server')
+    }
+    return await response.json()
+  },
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaEnterpriseProvider()
-})
+create: async (data: any = {}) => {
+  console.log(data)
+  const response = await fetch(`https://jonjonautoplex.onrender.com/api/inventory`,
+  {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'x-access-token': `${token}`
+      },
+      body: JSON.stringify(data)
+  })
+
+  if (!response.ok) {
+      throw new Error('Failed to create new data on the server')
+  }
+
+  return await response.json()
+},
+
+update: async (id: string, data:any = {}) => {
+  const response = await fetch(`https://jonjonautoplex.onrender.com/api/inventory/${id}`,
+  {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'x-access-token': `${token}`
+      },
+      body: JSON.stringify(data)
+
+  })
+
+  if (!response.ok) {
+      throw new Error('Failed to update data on the server')
+  }
+
+  return await response.json()
+},
+
+delete: async (id: string) => {
+  const response = await fetch(`https://jonjonautoplex.onrender.com/api/inventory/${id}`,
+  {
+      method: 'DELETE',
+      headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'x-access-token': `${token}`
+      },
+
+  })
+
+  if (!response.ok) {
+      throw new Error('Failed to delete data from the server')
+  }
+
+  return;
+  },
+}
