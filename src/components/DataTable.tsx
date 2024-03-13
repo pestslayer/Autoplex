@@ -57,7 +57,7 @@ function DataTable() {
                 open={open}
                 onClose={handleClose}
             />
-            <div className="flex flex-row">
+            <div className="dashpage">
                 <div>
                     <button
                         className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white"

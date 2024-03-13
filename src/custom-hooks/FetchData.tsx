@@ -7,6 +7,7 @@ export const useGetData = () => {
     async function handleDataFetch(){
         const result = await server_calls.get();
         setData(result)
+        console.log(result)
     }
 
     useEffect( () => {

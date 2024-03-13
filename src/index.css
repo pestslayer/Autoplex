@@ -35,3 +35,10 @@
     background-image: url(/modal_background.jpg);
 }
 
+.dashpage {
+    display: flex;
+    flex-direction: row;
+    margin: 0%;
+    padding: 0%;
+    background-image: url(/modal_background.jpg);
+}

@@ -27,8 +27,10 @@ const InvetoryForm = ( props:InvetoryFormProps) => {
       dispatch(chooseColor(data.color));
       console.log(data + 'here')
 
-      server_calls.create(data)
-    }
+      server_calls.create(store.getState())
+      setTimeout( () => {window.location.reload()}, 1000)
+    } 
+
     reset()
     
   }
