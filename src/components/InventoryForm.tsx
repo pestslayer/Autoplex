@@ -65,3 +65,7 @@ const InvetoryForm = ( props:InvetoryFormProps) => {
 }
 
 export default InvetoryForm
+
+
+
+
