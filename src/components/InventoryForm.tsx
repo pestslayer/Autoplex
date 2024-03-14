@@ -20,6 +20,7 @@ const InvetoryForm = ( props:InvetoryFormProps) => {
     console.log(data);
     if (props.id && props.id.length > 0) {
       server_calls.update(props.id[0], data)
+      setTimeout( () => {window.location.reload()}, 500)
       console.log(`updated: ${data.first} ${props.id}`)
     } else {
       dispatch(chooseMake(data.make));
