@@ -30,7 +30,7 @@ const Modal = ( props: Props ) => {
                         </p>
                     </div>
                     <div className="modal-content2">
-                        <InventoryForm id={props.id} />
+                        <InventoryForm id={props.id} onClose={props.onClose} />
                     </div>
                 </div>
             </div>

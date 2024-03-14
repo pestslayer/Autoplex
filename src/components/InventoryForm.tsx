@@ -5,11 +5,12 @@ import { chooseMake, chooseModel, chooseYear, chooseColor } from "../redux/slice
 import './../index.css'
 
 interface InvetoryFormProps {
-  id?: string[]
+  id?: string[];
+  onClose: () => void;
 }
 
 const InvetoryForm = ( props:InvetoryFormProps) => {
-  const { register, handleSubmit, reset } = useForm({});
+  const { register, handleSubmit,} = useForm({});
   const dispatch = useDispatch();
   const store = useStore();
 
@@ -29,16 +30,17 @@ const InvetoryForm = ( props:InvetoryFormProps) => {
 
       server_calls.create(store.getState())
       setTimeout( () => {window.location.reload()}, 1000)
+      event.target.reset()
+  
+      props.onClose();
     } 
-
-    reset()
     
   }
 
   return (
     <div className="modal-content">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Inventory</h1>
+        <h1 className='inv'>Inventory</h1>
         <div>
           <label htmlFor="make"></label>
           <input {...register('make')} name='make' placeholder="Make" />

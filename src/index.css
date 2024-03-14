@@ -42,3 +42,19 @@
     padding: 0%;
     background-image: url(/modal_background.jpg);
 }
+
+.navbar-toggler {
+    color: white;
+}
+
+i {
+    padding-top: 8%;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    height: 100%;
+}

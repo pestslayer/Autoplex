@@ -2,6 +2,7 @@ import  { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { auth, Providers } from "../config/firebase";
+import './../index.css'
 
 const Navbar = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -42,9 +43,9 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link to='/' className="nav-link">
             JonJon AutoPlex
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -53,8 +54,8 @@ const Navbar = () => {
             aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
+            > 
+            <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
